@@ -32,7 +32,7 @@
             totalEmpHrs += getWorkingHours(empCheck);
         }
         let empWage = totalEmpHrs * WAGE_PER_HOUR;
-        console.log("EmployeeHours: "+ totalEmpHrs +"Emp Wage: "+empWage);
+        console.log("EmployeeHours: " + totalEmpHrs +"Emp Wage: "+empWage);
     }
 
 
