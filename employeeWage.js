@@ -87,3 +87,10 @@
     let findFullTimeWage =(dailyWage) => dailyWage.includes("160");
     let findFullTimeWageArr = mapDayWithWageArr.find(findFullTimeWage);
     console.log("UC7D - First time full time wage earned on Day: "+ findFullTimeWageArr);
+
+    //UC 7E = check if every element of full time wage is truely holding full time wage
+
+    let isALLFullTimeWage = (dailyWage) => dailyWage.includes("160");
+    let isAllfullTimeWageArr = fullDayWageArr.every(isALLFullTimeWage);
+    console.log("UC7E - Check all element have full time wage: "+ isAllfullTimeWageArr);
+    
