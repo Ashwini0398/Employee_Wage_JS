@@ -7,8 +7,8 @@
     const WORKING_HOURS = 20;
     const MAX_HR_IN_MONTH = 160;
     const NUM_OF_WORKING_DAYS =20;
+
     
-    {
         function getWorkingHours(empCheck)
         {
            switch(empCheck)
@@ -32,14 +32,33 @@
         let totalWorkingDays = 0;
         let empDailyWAgeArr = new Array();
         while(totalEmpHrs <= MAX_HR_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
+            
             totalWorkingDays++;
             let empCheck = Math.floor(Math.random()*10) % 3;
-            totalEmpHrs += getWorkingHours(empCheck);
-            empDailyWAgeArr.push(calDailyWage(totalEmpHrs));
+            let empHrs = getWorkingHours(empCheck);
+            totalEmpHrs += empHrs;
+            empDailyWAgeArr.push(calDailyWage(empHrs));
+        
         }
 
         let empWage = calDailyWage(totalEmpHrs);
         console.log("Total Days: " + totalWorkingDays +" Employee Hours: " + totalEmpHrs +" Emp Wage: "+ empWage);
+    
+
+//Array HElper Function
+
+    let totalEmpWage = 0;
+    function sum(dailyWage){
+        totalEmpWage += dailyWage;
     }
 
+    empDailyWAgeArr.forEach(sum);
+    console.log("UC7A - Total Days: "+ totalWorkingDays + 
+                " Total Hrs: " + totalEmpHrs + " Emp Wage: " + totalEmpWage);
 
+
+    function totalWages(totalWage, dailyWage){
+        return totalWage + dailyWage;
+    }
+    console.log("UC7A - Emp Wage with reduce " +
+                     empDailyWAgeArr.reduce(totalWages,0));
